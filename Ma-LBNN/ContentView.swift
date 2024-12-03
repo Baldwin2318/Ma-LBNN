@@ -10,12 +10,21 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TabView {
+                // ITEMS BOUGHT
+                Tab("History", systemImage: "tray.and.arrow.down.fill")
+                {
+                }
+                
+                // URGENT ITEMS
+                Tab("To buy", systemImage: "cart")
+                {
+                    ToBuyView()
+                }
+                // WIP - badge number is the number of items
+                //.badge(2)
+            }
         }
-        .padding()
     }
 }
 
